@@ -1,0 +1,22 @@
+.chartContainer{
+    height: 450px;
+    background-color: var(--bgSoft);
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    width: 450px;
+    margin: 0px 5px 10px;
+}
+
+.container{
+    max-width: 970px;
+    max-height: 1470;
+}
+
+.chartRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* or justify-content: space-between; */
+  }
+  
+
