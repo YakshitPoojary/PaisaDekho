@@ -62,7 +62,7 @@ const Dashboard = () => {
     else if(!user && !sessionStorage.getItem('user')) {
       router.push('/login');
     }
-  }, [user]);
+  }, [user,router]);
 
 
   return (

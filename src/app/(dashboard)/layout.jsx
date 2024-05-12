@@ -20,7 +20,7 @@ const Layout = ({children}) => {
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
-  }, []);
+  });
 
   return (
     <div className={styles.container}>

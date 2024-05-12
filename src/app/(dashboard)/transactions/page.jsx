@@ -55,11 +55,11 @@ const TransactionsPage = () => {
         return styles.groceries;
       case 'health care':
         return styles.health;
-      case 'housing':
+      case 'housing and bills':
         return styles.housing;
       case 'personal care':
         return styles.personal;
-      case 'transportation':
+      case 'transportation cost':
         return styles.transportation;
       default:
         return '';
@@ -92,7 +92,7 @@ const TransactionsPage = () => {
       setUserData(data);
     }
     fetchData();
-  }, []);
+  });
 
   return (
     <div className={styles.container}>

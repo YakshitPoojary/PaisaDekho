@@ -117,7 +117,7 @@ const Chart = () => {
 
   useEffect(() => {
     fetchExpenseData(setExpenseData);
-  }, []);
+  }, [setExpenseData]);
 
   const [usedColors, setUsedColors] = useState([]);
   useEffect(() => {

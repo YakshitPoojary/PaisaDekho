@@ -12,7 +12,7 @@ const AiChat = () => {
     const [error, setError] = useState(null);
 
     const MODEL_NAME = 'gemini-1.0-pro-001';
-    const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+    const genAI = new GoogleGenerativeAI("AIzaSyAiI7S9eVXJyI6_2vxKqkWIblRZzrWi2og");
 
     const generationConfig={
         temperature: 0.9,
@@ -46,10 +46,16 @@ const AiChat = () => {
                 const newChat = await genAI.getGenerativeModel({model: MODEL_NAME}).startChat({
                     generationConfig,
                     safetySettings,
-                    history: messages.map((msg)=>({
-                        text: msg.text,
-                        role: msg.role,
-                    })),
+                    history: [
+                        {
+                          role: "user",
+                          parts: [{ text: "Your job is to act as a chatbot for a financial management website. Your name is PaisAI. Whenever a  personal finance related question is asked to you, you need to respond and give any advice accordingly. You shouldnt answer any questions outside the finance domain and write the response in plain text"}],
+                        },
+                        {
+                          role: "model",
+                          parts: [{ text: "Understood! I'm PaisAI, your friendly financial guide. Ask me anything related to personal finance, and I'll do my best to assist you.  Remember, I'm here to offer guidance, not financial guarantees. Let's get started!"}],
+                        },
+                      ],
                 });
                 setChat(newChat);
             }catch(error){
@@ -58,7 +64,7 @@ const AiChat = () => {
         };
 
         initChat();
-    },[]);
+    });
 
     const handleSendMessage = async () =>{
         try{
@@ -72,8 +78,9 @@ const AiChat = () => {
 
             if(chat){
                 const result = await chat.sendMessage(userInput);
+                const responseText = result.response.text().replace(/\*/g, '');
                 const botMessage ={
-                    text: result.response.text(),
+                    text: responseText,
                     role: 'bot',
                     timestamp: new Date(),
                 };

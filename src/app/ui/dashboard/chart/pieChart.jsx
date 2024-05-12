@@ -106,7 +106,7 @@ const renderActiveShape = (props) => {
   );
 };
 
-const pieChart = ({ selectedFamilyMember }) => {
+const PieChartPage = ({ selectedFamilyMember }) => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
@@ -154,4 +154,4 @@ const pieChart = ({ selectedFamilyMember }) => {
     );
 };
 
-export default pieChart;
+export default PieChartPage;

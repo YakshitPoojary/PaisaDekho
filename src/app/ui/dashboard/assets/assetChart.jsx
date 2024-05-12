@@ -90,7 +90,7 @@ const AssetChart = ({uid}) => {
         setAssetsData(data)
     }
     fetchTransactions();
-  }, []);
+  }, [uid]);
 
   return (
     <div>

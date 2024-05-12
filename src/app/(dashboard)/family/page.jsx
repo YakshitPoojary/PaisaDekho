@@ -68,7 +68,7 @@ const UsersPage = () => {
     }
     
     fetchData();
-  }, []);
+  });
 
   const handleToggleJoining = () => {
     toggleJoining(allowJoining, familyCode, setAllowJoining);

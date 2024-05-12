@@ -5,7 +5,7 @@ import AssetForm from '../../ui/dashboard/assets/form';
 import ViewAssets from '../../ui/dashboard/assets/ViewAssets';
 import styles from '../../ui/dashboard/assets/assetPage.module.css';
 
-const AssetPage = () => {
+const page = () => {
   const [showViewAsset, setShowViewAsset] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
@@ -39,4 +39,4 @@ const AssetPage = () => {
   )
 }
 
-export default AssetPage
+export default page

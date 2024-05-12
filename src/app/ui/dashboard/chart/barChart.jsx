@@ -53,7 +53,7 @@ const BarChartComponent = () => {
             }
         }
         fetchData();
-    }, []);
+    });
     
 
     return (
